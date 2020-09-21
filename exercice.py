@@ -6,17 +6,31 @@ from typing import List
 
 
 def convert_to_absolute() -> float:
-    return 0.0
+    nombre= float (input("Entrez un nombre: "))
+    return abs(nombre)
 
 
 def use_prefixes() -> List[str]:
-    prefixes, suffixes = 'JKLMNOP', 'ack'
+    prefixes, suffixes = 'JKLMNOPQ', 'ack'
+    result=[]
+    for letter in prefixes:
+        result.append(letter + suffixes)
 
-    return [""]
+    return result
 
 
 def prime_integer_summation() -> int:
-    return 0
+    summation = 0
+    
+    for number in range(2,542) :
+        for i in range(2, number):
+            if (number % i) == 0:
+                break
+        else:
+            #print(number)
+            summation += number
+                
+    return summation
 
 
 def factorial(number: int) -> int:
@@ -32,7 +46,7 @@ def main() -> None:
 
     print(f"La liste des noms générés avec les préfixes est: {use_prefixes()}")
 
-    print(f"La somme des nombres de 0 à 100 est: {prime_integer_summation()}")
+    print(f"La somme des 100 premiers nombres entiers est: {prime_integer_summation()}")
 
     number = 10
     print(f"La factiorelle du nombre {number} est: {factorial(number)}")
